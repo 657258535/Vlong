@@ -15,7 +15,6 @@ document.getElementById("se").addEventListener("click", function(){
 		if(url.indexOf("mp4") > -1){
 			if(url.indexOf("http") > -1){
 				document.getElementById("maincate").innerHTML='<a onclick="play(this,\''+url+'\')" href="javascript:(0);" >第1集</a>';
-				
 				ovmp4(url);v=true;break;
 			}//过滤m3u8
 		}else if(url.indexOf("m3u8") > -1){
@@ -71,6 +70,7 @@ function ou(url=''){
 
 function ovmp4(url){
 	//播放mp4
+	console.log(url);
 	document.getElementById('player').innerHTML='<video id="vp" class="video-js" controls autoplay loop webkit-playsinline=“true” playsinline=“true” data-setup="{}"><source src="'+url+'" type="video/mp4"/></video>';
 	document.getElementById("weblist").style.display="none";
 	document.getElementById("searchlist").style.display="none";
@@ -79,6 +79,7 @@ function ovmp4(url){
 
 function ovhls(url){
 	//播放hls
+	console.log(url);
 	document.getElementById('player').innerHTML='<video id="vp" class="video-js" controls autoplay loop webkit-playsinline=“true” playsinline=“true” data-setup="{}"><source src="'+url+'" type="application/x-mpegURL"/></video>';
 	document.getElementById("weblist").style.display="none";
 	document.getElementById("searchlist").style.display="none";

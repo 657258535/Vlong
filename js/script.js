@@ -71,9 +71,7 @@ function ou(url=''){
 
 function ovmp4(url){
 	//播放mp4
-	var videos = document.getElementById('vp');
-	videos.src=url;
-	videos.play();
+	document.getElementById('player').innerHTML='<video id="vp" class="video-js" controls autoplay loop webkit-playsinline=“true” playsinline=“true” data-setup="{}"><source src="'+url+'" type="video/mp4"/></video>';
 	document.getElementById("weblist").style.display="none";
 	document.getElementById("searchlist").style.display="none";
 	document.getElementById("vplay").style.display="block";
@@ -81,15 +79,7 @@ function ovmp4(url){
 
 function ovhls(url){
 	//播放hls
-	if (Hls.isSupported()) {
-		var videos = document.getElementById('vp');
-		var hls = new Hls();
-		hls.loadSource(url);
-		hls.attachMedia(videos);
-		hls.on(Hls.Events.MANIFEST_PARSED, function () {
-			videos.play();
-		});
-	}
+	document.getElementById('player').innerHTML='<video id="vp" class="video-js" controls autoplay loop webkit-playsinline=“true” playsinline=“true” data-setup="{}"><source src="'+url+'" type="application/x-mpegURL"/></video>';
 	document.getElementById("weblist").style.display="none";
 	document.getElementById("searchlist").style.display="none";
 	document.getElementById("vplay").style.display="block";
@@ -180,3 +170,42 @@ function IsPC(){
 if(IsPC()){
 	window.location.href="http://127.0.0.1";
 }
+var vtime=document.getElementById("vp");
+
+var isplay = false;
+
+        var keyEvent = (function () {
+
+            document.onkeydown = function (e) {
+
+                 if (e.keyCode === 37) { // left
+
+                  vtime.currentTime=vtime.currentTime-5;
+
+                } else if (e.keyCode === 39) { // right
+
+                  vtime.currentTime=vtime.currentTime+5;
+
+                } else if (e.keyCode === 32) {
+
+                    if(isplay) {
+
+                         isplay = false;
+
+                         vtime.pause();
+
+                    }else {
+
+                         isplay = true;
+
+                         vtime.play();
+
+                    }
+
+                
+
+                }
+
+            }
+
+        })();

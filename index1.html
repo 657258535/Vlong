@@ -6,7 +6,10 @@
 	<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1,maximum-scale=1,viewport-fit=cover">
 	<title>Vlong</title>
 	<link rel="stylesheet" href="css/style.css"/>
-	<link rel="stylesheet" href="css/ckin.css">
+	<link href="https://cdn.staticfile.org/video.js/8.2.0/video-js.min.css" rel="stylesheet">
+	<script src="https://cdn.staticfile.org/video.js/8.2.0/video.min.js"></script>
+	<script src="https://cdn.staticfile.org/video.js/8.2.0/lang/zh-CN.min.js"></script>
+	<!-- <link rel="stylesheet" href="css/ckin.css"> -->
 </head>
 <!-- 内容主体 -->
 <body>
@@ -131,14 +134,14 @@
 	<!-- 搜索结果 -->
 	<div id="searchlist" class="layui-anim layui-anim-down">
 		<div class="nav">
-			<a class="web" href="?wd=狂飙">狂飙</a>
-			<a href="?wd=斗罗">斗罗</a>
-			<a href="?wd=斗破">斗破</a>
-			<a href="?wd=传媒">传媒</a>
-			<a href="?wd=国产">国产</a>
-			<a href="?wd=伦理">伦理</a>
-			<a href="?wd=动漫">动漫</a>
-			<a href="?wd=sm">sm</a>
+			<a>狂飙</a>
+			<a>斗罗</a>
+			<a>斗破</a>
+			<a>传媒</a>
+			<a>国产</a>
+			<a>伦理</a>
+			<a>动漫</a>
+			<a>sm</a>
 		</div>
 		<div>
 			<ul id="vlist">
@@ -153,7 +156,11 @@
 	<div id="vplay">
 		<h4 id="title" style="margin-bottom: 20px;"></h4>
 		<p id="lod">加载中……</p>
-		<video id="vp" data-overlay="2" autoplay loop webkit-playsinline=“true” playsinline=“true”></video>
+		<div id="player">
+			<video id="vp" class="video-js" controls autoplay loop webkit-playsinline=“true” playsinline=“true” data-setup="{}">
+				<source src="" type="application/x-mpegURL"/>
+			</video>
+		</div>
 		<div id="maincate" class="maincate"></div>
 	</div>
 	<div id="footer">
@@ -161,7 +168,7 @@
 		<p>Copyright © 2023 Vlong Inc. All rights reserved.</p>
 	</div>
 <script src="https://cdn.staticfile.org/hls.js/1.1.5-0.canary.8431/hls.min.js"></script>
-<script src="js/ckin.js"></script>
+<!-- <script src="js/ckin.js"></script> -->
 <script src="js/script.js"></script>
 </body>
 </html>

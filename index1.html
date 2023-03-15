@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<!-- 网页头部 -->
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1,maximum-scale=1,viewport-fit=cover">
+	<title>Vlong</title>
+	<link rel="stylesheet" href="css/style.css"/>
+	<link rel="stylesheet" href="css/ckin.css">
+</head>
+<!-- 内容主体 -->
+<body>
+	
+	<!-- 搜索 -->
+	<div class="se">
+		<!-- Logo -->
+		<br />
+		<div class="logo">
+			<img src="img/vlong128.png" width="64px" onclick="javascript:location.reload();"/>
+			<p>V<span>long</span></p>
+		</div>
+		<br />
+		<br />
+		<input id="url" type="text" placeholder="请输入关键词或视频Url" />
+		<input id="sv" type="button" onclick="ou()" value="搜网页" />
+		<input id="se" type="button" value="搜视频" />
+	</div>
+	<div id="weblist" >
+		<!-- 官解区域 -->
+		<iframe id="ifm" src="" allowfullscreen="true" style="width: 100%;height: 250px;display: none;"></iframe>
+		<!-- 视频站点 -->
+		<p class="t">视频站点</p>
+		<ul class="list1">
+			<li onclick="ou('https://v.qq.com')">
+				<h5>腾讯</h5>
+				<p>国漫大作，尽在腾讯视频</p>
+			</li>
+			<li onclick="ou('https://www.youku.com')">
+				<h5>优酷</h5>
+				<p>仙侠剧，看这里</p>
+			</li>
+			<li onclick="ou('https://www.bilibili.com')">
+				<h5>哔哩哔哩</h5>
+				<p>二次元，宅男最爱</p>
+			</li>
+			<li onclick="ou('https://www.iqiyi.com')">
+				<h5>爱奇艺</h5>
+				<p>钻石会员了解一下！！！</p>
+			</li>
+			<li onclick="ou('https://www.douyin.com')">
+				<h5>抖音</h5>
+				<p>慎入，有毒，请节制</p>
+			</li>
+			<li onclick="ou('http://www.youtube.com')">
+				<h5>YouTube</h5>
+				<p>国际视频站，需要知识储备</p>
+			</li>
+		</ul>
+		
+		<!-- 图片相关 -->
+		<p class="t">图片相关</p>
+		<ul class="list1">
+			<li onclick="ou('https://www.iconfinder.com')">
+				<h5>Iconfinder</h5>
+				<p>图标库，为您的项目提供百万图形</p>
+			</li>
+			<li onclick="ou('https://monstermash.zone')">
+				<h5>Monster Mash</h5>
+				<p>图形转3D模型</p>
+			</li>
+			<li onclick="ou('https://sketch.metademolab.com')">
+				<h5>Animated Drawings</h5>
+				<p>通过动画角色四处移动，让您的绘画栩栩如生！</p>
+			</li>
+			<li onclick="ou('https://cloudconvert.com/png-to-ico')">
+				<h5>png-to-ico</h5>
+				<p>png-转-ico，支持透明背景</p>
+			</li>
+			<li onclick="ou('https://tinypng.com')">
+				<h5>TinyPng</h5>
+				<p>在线图片压缩，压缩率美丽</p>
+			</li>
+			<li onclick="ou('https://www.remove.bg/zh')">
+				<h5>removebg</h5>
+				<p>在线抠图，美工最爱</p>
+			</li>
+		</ul>
+		<!-- 开发测试 -->
+		<p class="t">开发测试</p>
+		<ul class="list1">
+			<li onclick="ou('https://tool.lu/regex')">
+				<h5>正则测试</h5>
+				<p>正则表达式，测试工具</p>
+			</li>
+			<li onclick="ou('https://c.runoob.com/front-end/53')">
+				<h5>JSON解析</h5>
+				<p>JSON格式化工具，界面直观</p>
+			</li>
+			<li onclick="ou('https://developer.android.google.cn/studio/releases/platform-tools?hl=zh-cn')">
+				<h5>Android ADB Tools</h5>
+				<p>主要是 adb 和 fastboot。</p>
+			</li>
+			<li onclick="ou('https://vercel.com')">
+				<h5>Vercel</h5>
+				<p>网站托管服务。</p>
+			</li>
+			<li onclick="ou('https://oktools.net/image2base64')">
+				<h5>图片Base64编码</h5>
+				<p>图片转Base64编码</p>
+			</li>
+			<li onclick="ou('https://lingdaima.com/shadow')">
+				<h5>CSS阴影在线调试</h5>
+				<p>在线创建可视化CSS阴影效果神器。</p>
+			</li>
+		</ul>
+		<!-- 静态资源托管 -->
+		<p class="t">静态资源托管</p>
+		<ul class="list1">
+			<li onclick="ou('https://cdnjs.com')">
+				<h5>CDNJS</h5>
+				<p>CDNJS 是一项免费的开源 CDN 服务</p>
+			</li>
+			<li onclick="ou('http://www.staticfile.org')">
+				<h5>StaticFile</h5>
+				<p>免费、快速、开放的 CDN 服务</p>
+			</li>
+		</ul>
+	</div>
+	<!-- 加载动画 -->
+	<div id="loding" class="loader"></div>
+	<!-- 搜索结果 -->
+	<div id="searchlist" class="layui-anim layui-anim-down">
+		<div class="nav">
+			<a class="web" href="?wd=狂飙">狂飙</a>
+			<a href="?wd=斗罗">斗罗</a>
+			<a href="?wd=斗破">斗破</a>
+			<a href="?wd=传媒">传媒</a>
+			<a href="?wd=国产">国产</a>
+			<a href="?wd=伦理">伦理</a>
+			<a href="?wd=动漫">动漫</a>
+			<a href="?wd=sm">sm</a>
+		</div>
+		<div>
+			<ul id="vlist">
+				<!-- <li onclick="ose('url')">
+					<h4>斗破苍穹</h4>
+					<p>斗破苍穹斗破苍穹斗破苍穹斗破苍穹斗破苍穹</p>
+				</li> -->
+			</ul>
+		</div>
+	</div>
+	<!-- 视频播放 -->
+	<div id="vplay">
+		<h4 id="title" style="margin-bottom: 20px;"></h4>
+		<p id="lod">加载中……</p>
+		<video id="vp" data-overlay="2" autoplay loop webkit-playsinline=“true” playsinline=“true”></video>
+		<div id="maincate" class="maincate"></div>
+	</div>
+	<div id="footer">
+		<img src="img/vlong128.png" onclick="javascript:location.reload();"/>
+		<p>Copyright © 2023 Vlong Inc. All rights reserved.</p>
+	</div>
+<script src="http://cdn.staticfile.org/hls.js/1.1.5-0.canary.8431/hls.min.js"></script>
+<script src="js/ckin.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

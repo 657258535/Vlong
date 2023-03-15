@@ -165,6 +165,7 @@ input {
 }
 #vp{
 	width: 100%;
+	height: 250px;
 }
 /* 视频加载中 */
 #lod{

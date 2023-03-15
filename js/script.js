@@ -36,7 +36,7 @@ document.getElementById("se").addEventListener("click", function(){
 		//搜索视频
 		document.getElementById("loding").style.display="block";
 		var httpRequest = new XMLHttpRequest();
-		httpRequest.open('GET', 'http://ebay868.com/?wd='+url, true);
+		httpRequest.open('GET', 'https://ebay868.com/?wd='+url, true);
 		httpRequest.send();
 		httpRequest.onreadystatechange = function () {
 			if (httpRequest.readyState == 4 && httpRequest.status == 200) {
@@ -99,7 +99,7 @@ function ose(id,vid){
 	//播放
 	
 	var httpRequest = new XMLHttpRequest();
-	        httpRequest.open('GET', 'http://ebay868.com/?id='+id+"&vid="+vid, true);
+	        httpRequest.open('GET', 'https://ebay868.com/?id='+id+"&vid="+vid, true);
 	        httpRequest.send();
 	        httpRequest.onreadystatechange = function () {
 	            if (httpRequest.readyState == 4 && httpRequest.status == 200) {

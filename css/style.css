@@ -163,6 +163,9 @@ input {
 	width: 96%;
 	margin-left: 2%;
 }
+#vp{
+	width: 100%;
+}
 /* 视频加载中 */
 #lod{
 	width: 100%;

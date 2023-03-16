@@ -66,7 +66,11 @@ function ou(url=''){
 	if(url){
 		window.open(url,"_blank");
 	}else{
-		var url=document.getElementById("url").value;
+		var url=document.getElementById("url").value;var url=document.getElementById("url").value;
+		if(!url){
+			console.log("请输入关键词");
+			return;
+		}
 		window.open("https://www.baidu.com/s?ie=UTF-8&wd="+url,"_blank");
 	}
 }

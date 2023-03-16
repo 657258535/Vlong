@@ -3,11 +3,13 @@ document.getElementById("searchlist").style.display="none";
 document.getElementById("vplay").style.display="none";
 // 搜视频
 document.getElementById("se").addEventListener("click", function(){
+	var url=document.getElementById("url").value;
+	if(!url){
+		return;
+	}
 	document.getElementById("ifm").src="";
 	document.getElementById("ifm").style.display="none";
-	
 	document.getElementById('vp').src="";
-	var url=document.getElementById("url").value;
 	var urls = ["v.qq","iqiyi.com","mgtv.com","bilibili.com","v.youku","tv.sohu","le.com"];
 	var v=false;
 	for(var i = 0; i < urls.length; i++){

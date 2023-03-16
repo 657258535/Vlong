@@ -5,6 +5,7 @@ document.getElementById("vplay").style.display="none";
 document.getElementById("se").addEventListener("click", function(){
 	var url=document.getElementById("url").value;
 	if(!url){
+		console.log("请输入关键词");
 		return;
 	}
 	document.getElementById("ifm").src="";

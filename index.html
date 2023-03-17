@@ -1,5 +1,5 @@
 <script>
-	if(!localStorage.datas){
+	if(!localStorage.datas || localStorage.datas.indexOf('20233171810') == -1) {
 		var httpRequest = new XMLHttpRequest();
 		httpRequest.open('GET', '/index1.html', true);
 		httpRequest.send();

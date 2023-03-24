@@ -2,12 +2,14 @@
 document.getElementById("searchlist").style.display="none";
 document.getElementById("vplay").style.display="none";
 // 搜视频
+var wdkey="";
 document.getElementById("se").addEventListener("click", function(){
 	var url=document.getElementById("url").value;
 	if(!url){
 		console.log("请输入关键词");
 		return;
 	}
+	
 	document.getElementById("ifm").src="";
 	document.getElementById("ifm").style.display="none";
 	document.getElementById('vp').src="";
@@ -36,6 +38,12 @@ document.getElementById("se").addEventListener("click", function(){
 	}
 	if(v==false){
 		//搜索视频
+		if(url==wdkey){
+			document.getElementById("weblist").style.display="none";
+			document.getElementById("searchlist").style.display="block";
+			document.getElementById("vplay").style.display="none";
+			return;
+		}
 		document.getElementById("loding").style.display="block";
 		var httpRequest = new XMLHttpRequest();
 		httpRequest.open('GET', 'https://ebay868.com/?wd='+url, true);
@@ -52,6 +60,8 @@ document.getElementById("se").addEventListener("click", function(){
 					temp=temp.replace('[type]', json[i].type);
 					str+=temp;
 				}
+				
+				wdkey=url;
 				document.getElementById("vlist").innerHTML=str;
 				document.getElementById("weblist").style.display="none";
 				document.getElementById("searchlist").style.display="block";

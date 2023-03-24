@@ -106,11 +106,12 @@ function ovhls(url){
 var idvid="";
 function ose(id,vid){
 	//播放
-	if(idvid == id+vid){
+	if(idvid == String(id)+String(vid)){
 		document.getElementById("weblist").style.display="none";
 		document.getElementById("searchlist").style.display="none";
 		document.getElementById("vplay").style.display="block";
 		document.getElementById('vp').play();
+		return;
 	}
 	var httpRequest = new XMLHttpRequest();
 	        httpRequest.open('GET', 'https://ebay868.com/?id='+id+"&vid="+vid, true);
@@ -151,7 +152,7 @@ function ose(id,vid){
 						    str+='<a onclick="play(this,\''+temp['1']+'\')" href="javascript:(0);" >'+temp['0']+'</a>';
 						}
 						document.getElementById("maincate").innerHTML=str;
-						idvid=id+vid;
+						idvid=String(id)+String(vid);
 					}else{
 						var temp=json.split("$");
 						if(temp['1'].indexOf(".m3u8") > -1){
@@ -163,7 +164,7 @@ function ose(id,vid){
 						};
 						str+='<a onclick="play(this,\''+temp['1']+'\')" href="javascript:(0);" >'+temp['0']+'</a>';
 						document.getElementById("maincate").innerHTML=str;
-						idvid=id+vid;
+						idvid=String(id)+String(vid);
 					}
 	                
 	            }
